@@ -3,12 +3,17 @@
 	<stdio.h>
 	<stdlib.h>
 
-1599779990 source:d:\proyectos\c\tp_laboratorio_1\tp1\main.c
+1599861448 source:d:\proyectos\c\tp_laboratorio_1\tp1\main.c
 	<stdio.h>
 	<stdlib.h>
+	<ctype.h>
 	"funciones.h"
 
-1599523609 d:\proyectos\c\tp_laboratorio_1\tp1\funciones.h
+1599861448 d:\proyectos\c\tp_laboratorio_1\tp1\funciones.h
 
-1599779967 source:d:\proyectos\c\tp_laboratorio_1\tp1\funciones.c
+1599860414 source:d:\proyectos\c\tp_laboratorio_1\tp1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	"funciones.h"
 

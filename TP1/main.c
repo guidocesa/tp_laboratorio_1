@@ -5,6 +5,8 @@
 
 int main()
 {
+    int primerOpernadoFueIngresado = 0;
+    int segundoOperandoFueIngresado = 0;
     int elProgramaFinalizo = 0;
     int resultadosCalculados = 0;
     int A = 0;
@@ -22,32 +24,44 @@ int main()
 
         system("cls");
         fflush(stdin);
-        opcionSelecionada = obtenerSeleccion(A, B);
+        opcionSelecionada = obtenerSeleccion(A, B); //A y B solo se pasan para ser mostrados.
 
         switch(opcionSelecionada)
         {
         case 1:
-            A = ingresarOperando();
+            A = ingresarOperando(&primerOpernadoFueIngresado);
+            resultadosCalculados = 0; //Aca se cambia a falso luego de cambiar un operando para no mostrar resultados viejos
             break;
 
         case 2:
-            B = ingresarOperando();
+            B = ingresarOperando(&segundoOperandoFueIngresado);
+            resultadosCalculados = 0;
             break;
 
         case 3:
-            suma = calcularSuma(A , B);
-            resta = calcularResta(A , B);
-            division = calcularDivision(A , B);
-            multiplicacion = calcularMultiplicacion(A , B);
-            factorialA = calcularFactorial(A);
-            factorialB = calcularFactorial(B);
-            resultadosCalculados = 1;
+            /*Aca me gustaria llamar a una sola funcion "realizarCalculos" pero deberia pasar todas
+                las variables por parametro y no estaria muy correcto en mi opinion */
+            if(primerOpernadoFueIngresado && segundoOperandoFueIngresado)
+            {
+                suma = calcularSuma(A , B);
+                resta = calcularResta(A , B);
+                division = calcularDivision(A , B);
+                multiplicacion = calcularMultiplicacion(A , B);
+                factorialA = calcularFactorial(A);
+                factorialB = calcularFactorial(B);
+                resultadosCalculados = 1;
+            }else{
+                system("cls");
+                printf("Primero ingrese ambos operandos. \n\n");
+                system("pause");
+            }
+
             break;
 
         case 4:
             if(resultadosCalculados)
             {
-                informarResultado(suma, resta, division, multiplicacion, factorialA, factorialB, B);
+                informarResultado(suma, resta, division, multiplicacion, factorialA, factorialB, A, B); //Esta funcion no me termina de gustar tampoco con tantos parametros
             }
             else
             {
@@ -67,7 +81,6 @@ int main()
             system("pause");
         }
     }
-
     return 0;
 }
 

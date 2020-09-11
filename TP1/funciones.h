@@ -18,7 +18,7 @@
  * \return void
  *
  */
-void informarResultado(int suma, int resta, float division, int multiplicacion,long int factorialA,long int factorialB, int B);
+void informarResultado(int suma, int resta, float division, int multiplicacion,long int factorialA,long int factorialB, int A, int B);
 
 /** \brief Obtiene un numero por consola y lo devuelve
  *
@@ -79,3 +79,5 @@ int calcularFactorial(int i);
  *
  */
 int obtenerSeleccion(int A, int B);
+
+

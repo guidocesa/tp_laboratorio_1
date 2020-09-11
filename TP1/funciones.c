@@ -1,4 +1,10 @@
-void informarResultado(int suma, int resta, float division, int multiplicacion,long int factorialA,long int factorialB, int B)
+#include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include "funciones.h"
+
+
+void informarResultado(int suma, int resta, float division, int multiplicacion,long int factorialA,long int factorialB, int A, int B)
 {
     system("cls");
     printf("El resultado de la suma es %i \n\n", suma);
@@ -12,16 +18,28 @@ void informarResultado(int suma, int resta, float division, int multiplicacion,l
         printf("No se pudo realizar la division porque el divisior es 0 \n\n");
     }
     printf("El resultado de la multiplicacion es %i \n\n", multiplicacion);
-    printf("El resultado del factorial A es: %li \n\n", factorialA);
-    printf("El resultado del factorial B es: %li \n\n", factorialB);
+    if(A < 0)
+    {
+        printf("El faltorial de A no puede ser calculado. \n\n");
+    }else{
+        printf("El resultado del factorial A es: %li \n\n", factorialA);
+    }
+    if(B < 0)
+    {
+        printf("El faltorial de B no puede ser calculado. \n\n");
+    }else{
+        printf("El resultado del factorial B es: %li \n\n", factorialB);
+    }
     system("pause");
 }
-int ingresarOperando()
+
+int ingresarOperando(int* fueIngresado)
 {
     int ingreso = 0;
     system("cls");
     printf("Ingrese el operando: ");
     scanf("%i" , &ingreso);
+    *fueIngresado = 1;
     return ingreso;
 }
 
