@@ -15,8 +15,8 @@ int main()
     int resta;
     float division;
     int multiplicacion;
-    long int factorialA;
-    long int factorialB;
+    long long int factorialA;
+    long long int factorialB;
     int opcionSelecionada;
 
     while(!elProgramaFinalizo)
@@ -40,7 +40,7 @@ int main()
 
         case 3:
             /*Aca me gustaria llamar a una sola funcion "realizarCalculos" pero deberia pasar todas
-                las variables por parametro y no estaria muy correcto en mi opinion */
+                las variables por referencia y no estaria muy correcto en mi opinion */
             if(primerOpernadoFueIngresado && segundoOperandoFueIngresado)
             {
                 suma = calcularSuma(A , B);

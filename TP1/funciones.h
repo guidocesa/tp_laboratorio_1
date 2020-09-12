@@ -69,7 +69,7 @@ float calcularDivision(int A, int B);
  * \return int resultado
  *
  */
-int calcularFactorial(int i);
+long long int calcularFactorial(long long int i);
 
 /** \brief Obtiene por consola una seleccion luego de haber mostrado las opciones por printf
  *

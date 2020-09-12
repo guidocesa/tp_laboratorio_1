@@ -11,7 +11,7 @@ void informarResultado(int suma, int resta, float division, int multiplicacion,l
     printf("El resultado de la resta es %i \n\n", resta);
     if(B != 0.0)
     {
-        printf("El resultado de la division es %f \n\n", division);
+        printf("El resultado de la division es %.2f \n\n", division);
     }
     else
     {
@@ -71,7 +71,7 @@ float calcularDivision(int A, int B)
 
 }
 
-int calcularFactorial(int i)
+long long int calcularFactorial(long long int i)
 {
     if(i > 0)
     {
@@ -89,7 +89,7 @@ int obtenerSeleccion(int A, int B)
     printf("Por favor elija una opcion y lugo precione enter.\n\n");
     printf("1.Ingresar 1er operando.  A = %i \n", A);
     printf("2.Ingresar 2do operando.  B = %i \n", B);
-    printf("3.Colcular todas las operaciones entre los operando.\n");
+    printf("3.Calcular todas las operaciones entre los operando.\n");
     printf("4.Informar los resultados\n");
     printf("5.Salir\n");
     scanf("%i" , &seleccion);
