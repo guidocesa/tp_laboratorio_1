@@ -5,6 +5,13 @@
 #include "ArrayEmployees.h"
 #define EMPLEADOSMAXIMOS 1000
 
+/** \brief Setea todo el array de empleados como vacio.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void inicializarEmpleados(eEmpleado empleados[] , int largo)
 {
     for(int i = 0; i < largo; i++)
@@ -13,6 +20,13 @@ void inicializarEmpleados(eEmpleado empleados[] , int largo)
     }
 }
 
+/** \brief Devuelve el menor Id libre arrancando en el nomero 1
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return int
+ *
+ */
 int obtenerIdLibre(eEmpleado empleados[] , int largo)
 {
     int idNuevo = 1;
@@ -33,6 +47,17 @@ int obtenerIdLibre(eEmpleado empleados[] , int largo)
 
 }
 
+/** \brief Recibe por parametro todos los datos necesarios para cargar un empleado nuevo y lo coloca ordenado dentro del array. En caso de estar lleno devuelve -1.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \param nombre[51] char
+ * \param apellido[51] char
+ * \param sueldo float
+ * \param sector int
+ * \return int
+ *
+ */
 int agregarEmpleadoOrdenado(eEmpleado empleados[] , int largo, char nombre[51], char apellido[51], float sueldo, int sector)
 {
     int retorno = 0;
@@ -82,6 +107,11 @@ int agregarEmpleadoOrdenado(eEmpleado empleados[] , int largo, char nombre[51], 
     return retorno;
 }
 
+/** \brief Muestra las opciones y devuelve la seleccionada por el usuario.
+ *
+ * \return int
+ *
+ */
 int mostrarOpcionesYObtenerSeleccion()
 {
     int seleccion;
@@ -114,6 +144,11 @@ int mostrarOpcionesYObtenerSeleccion()
 
 }
 
+/** \brief Pide confirmar que se desea salir.
+ *
+ * \return int
+ *
+ */
 int confirmarSalida()
 {
     int retorno = 0;
@@ -124,6 +159,14 @@ int confirmarSalida()
     return retorno;
 }
 
+/** \brief Recibe por parametro el Id de un empleado y lo quita del array y luego reordena el mismo. Devuelve 1 si fue dado de baja o 0 si no fue encontrado.
+ *
+ * \param empleados[] eEmpleado
+ * \param id int
+ * \param largo int
+ * \return int
+ *
+ */
 int borrarEmpleadoPorId(eEmpleado empleados[], int id, int largo)
 {
     int fueDadoDeBaja = 0;
@@ -143,6 +186,13 @@ int borrarEmpleadoPorId(eEmpleado empleados[], int id, int largo)
     return(fueDadoDeBaja);
 }
 
+/** \brief Pide el Id del empleado a borrar y avisa si no se pudo realizar la baja.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return int
+ *
+ */
 int darDeBajaEmpleado(eEmpleado empleados[], int largo)
 {
     int id;
@@ -161,6 +211,12 @@ int darDeBajaEmpleado(eEmpleado empleados[], int largo)
     return !fueBorrado;
 }
 
+/** \brief Normaliza los String ingresados por el usuario para que solo la primer letra sea mayucula. ej: JuAN  --> Juan
+ *
+ * \param nombre[] char
+ * \return void
+ *
+ */
 void formatearString(char nombre[])
 {
     int i = 0;
@@ -172,6 +228,13 @@ void formatearString(char nombre[])
     nombre[0] = toupper(nombre[0]);
 }
 
+/** \brief Pide todos los datos necesarios para cargar un empleado por consola y luego llama a AgregarEmpleadoOrdenado.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void solicitarDatosDeEmpleadoYAgregar(eEmpleado empleados[], int largo)
 {
     char nombre[51];
@@ -212,6 +275,13 @@ void solicitarDatosDeEmpleadoYAgregar(eEmpleado empleados[], int largo)
 
 }
 
+/** \brief Muestra el promedio de sueldos, cuantos empleados estan sobre este ppromedio y cuento es la totalidad de salarios. Avisa si el Array esta vacio.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void mostrarInformacionSueldos(eEmpleado empleados[], int largo)
 {
     int arrayVacio = 0;
@@ -259,11 +329,24 @@ void mostrarInformacionSueldos(eEmpleado empleados[], int largo)
     }
 }
 
+/** \brief Muestra los datos de un Empleado por consola.
+ *
+ * \param empleado eEmpleado
+ * \return void
+ *
+ */
 void printEmpleado(eEmpleado empleado)
 {
     printf("%d\t%s\t\t%s\t\t%2.f\t\t%d\n", empleado.id, empleado.nombre, empleado.apellido, empleado.sueldo, empleado.sector);
 }
 
+/** \brief Muestra a todos los empleados en el array de manera formateada.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void mostrarTodosLosEmpleados(eEmpleado empleados[], int largo)
 {
     int i = 0;
@@ -278,6 +361,13 @@ void mostrarTodosLosEmpleados(eEmpleado empleados[], int largo)
     system("pause");
 }
 
+/** \brief Muestra el menu de la seccion Informacion.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void mostrarMenuInformacion(eEmpleado empleados[], int largo)
 {
     int seleccionEsCorrecta = 0;
@@ -310,6 +400,13 @@ void mostrarMenuInformacion(eEmpleado empleados[], int largo)
     }
 }
 
+/** \brief Pide un Id y muestra al empleado con dicho Id y confirma si desea modificarse ese empleado. Luego llama a Borrar empleado y a agregar uno nuevo.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void modificarEmpleado(eEmpleado empleados[], int largo)
 {
     system("cls");
@@ -355,6 +452,13 @@ void modificarEmpleado(eEmpleado empleados[], int largo)
     }
 }
 
+/** \brief Menu interno que llama a las funciones correspondientes segun la seleccion del usuario.
+ *
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return void
+ *
+ */
 void menuPrincipal(eEmpleado empleados[], int largo)
 {
     int programaTerminado = 0;
@@ -385,6 +489,14 @@ void menuPrincipal(eEmpleado empleados[], int largo)
 
 }
 
+/** \brief Si el array no esta lleno, mueve a todos los empleados una posicion hacia adelante para "hacer lugar" y colocar el empleado nuevo ya ordenado.
+ *
+ * \param posicionInicial int
+ * \param empleados[] eEmpleado
+ * \param largo int
+ * \return int
+ *
+ */
 int moverEmpleadosDesde(int posicionInicial , eEmpleado empleados[], int largo)
 {
     int retorno;
