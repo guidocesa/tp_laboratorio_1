@@ -1,0 +1,70 @@
+# depslib dependency file v1.0
+1603060784 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"color.h"
+	"bicicleta.h"
+	"trabajo.h"
+
+1603060784 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\color.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"color.h"
+
+1603060987 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\trabajo.c
+	"trabajo.h"
+	"bicicleta.h"
+	"servicio.h"
+
+1603060784 d:\proyectos\c\tp_laboratorio_1\parcial 1\color.h
+
+1603061509 d:\proyectos\c\tp_laboratorio_1\parcial 1\bicicleta.h
+	"color.h"
+
+1603061509 d:\proyectos\c\tp_laboratorio_1\parcial 1\trabajo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"bicicleta.h"
+	"servicio.h"
+
+1603061083 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\servicio.c
+	"servicio.h"
+
+1603061538 d:\proyectos\c\tp_laboratorio_1\parcial 1\servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"color.h"
+	"bicicleta.h"
+
+1603061134 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\bicicleta.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"bicicleta.h"
+	"funciones.h"
+
+1603061566 d:\proyectos\c\tp_laboratorio_1\parcial 1\funciones.h
+	"bicicleta.h"
+	"trabajo.h"
+	"color.h"
+	"servicio.h"
+
+1603061213 source:d:\proyectos\c\tp_laboratorio_1\parcial 1\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"color.h"
+	"bicicleta.h"
+	"trabajo.h"
+	"funciones.h"
+
